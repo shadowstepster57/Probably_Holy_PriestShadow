@@ -16,6 +16,7 @@ ProbablyEngine.library.register('coreHealing', {
 
 ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
 
+	{ "Inner fire", "!player.buff(Inner Fire)" },
 	--mana
 	{ "Shadowfiend", {
 		"player.mana < 70",
@@ -30,6 +31,9 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
 		"modifier.cooldowns"
         }},
         { "Hymn of Hope", "modifier.alt"},
+        { "Divine Hymn", "@coreHealing.needsHealing(30, 10)" },
+        { "Cascade", "@coreHealing.needsHealing(80, 6)", "lowest" },
+        { "Halo", "@coreHealing.needsHealing(60, 10)", "lowest" },
         
         -- 25-man
         {{{ "Chakra: Sanctuary", "!player.buff" },
@@ -39,7 +43,6 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         { "Lightwell", "modifier.control", "ground" },
         { "Prayer of Mending", "!buff.lowest", "lowest" },
         --{ "Greater Heal", "lowest.health < 50", "lowest" },
-        { "Halo", "@coreHealing.needsHealing(60, 10)", "lowest" },
         { "Binding Heal", {
         	"lowest.health < 40",
         	"player.health < 40"
