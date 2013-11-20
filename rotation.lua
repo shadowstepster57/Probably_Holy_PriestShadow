@@ -59,7 +59,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	"player.health < 40"
         }, "lowest" },
         { "Flash Heal", "lowest.health < 40", "lowest" },
-        --{ "Greater Heal", "lowest.health < 55", "lowest" },
+        { "Greater Heal", "lowest.health < 75", "lowest" },
         { "Renew", {
         	"lowest.health < 80",
         	"!lowest.buff(139)"
