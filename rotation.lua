@@ -44,10 +44,6 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	"lowest.health < 40",
         	"player.health < 40"
         }},
-        { "139", {
-        	"lowest.health < 70",
-        	"!lowest.buff(139)"
-        }, "lowest"},
         { "Prayer of Healing", "@coreHealing.needsHealing(85, 10)", "lowest" },
         { "Heal", "lowest.health < 90", "lowest" },
 },"modifier.multitarget" },
@@ -65,7 +61,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         { "Renew", {
         	"lowest.health < 80",
         	"!lowest.buff(139)"
-        }, "lowest" },
+        }},
         { "Heal", "lowest.health < 90", "lowest" }, 
 }, "!modifier.multitarget" },
         
