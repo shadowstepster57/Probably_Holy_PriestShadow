@@ -50,7 +50,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         }, "lowest"},
         { "Prayer of Healing", "@coreHealing.needsHealing(85, 10)", "lowest" },
         { "Heal", "lowest.health < 90", "lowest" },
-        "modifier.multitarget" },
+}"modifier.multitarget" },
        
         -- 10-man
         {{ "Chakra: Serenity", "!player.buff" },
@@ -67,7 +67,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	"!lowest.buff(Renew)"
         }, "lowest" },
         { "Heal", "lowest.health < 90", "lowest" }, 
-        "!modifier.multitarget" },
+}"!modifier.multitarget" },
         
         
         
