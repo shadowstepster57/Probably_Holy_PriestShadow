@@ -34,7 +34,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         --healing
         { "Chakra: Sanctuary", "!player.buff" },
         { "Circle of Healing", "@coreHealing.needsHealing(85, 3)", "lowest" },
-        { "Holy Word: Sanctuary", "player.health > 10", "ground" },
+        { "Holy Word: Sanctuary", "modifier.lalt", "ground" },
         { "Prayer of Mending", "!buff.tank", "tank" },
         { "Greater Heal", {
         	"lowest.health < 40",
