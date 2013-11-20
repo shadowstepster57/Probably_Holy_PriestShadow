@@ -1,0 +1,16 @@
+-- ProbablyEngine Rotation Packager
+-- Custom Holy Priest Rotation
+-- Created on Nov 20th 2013 6:22 am
+ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
+
+  -- =======================================
+  --          Your Rotation Here!
+  -- =======================================
+  -- Everything between the first set of { }
+  -- in the core rotations can go here
+  -- =======================================
+  -- If you have any questions, please ask
+  -- on the ProbablyEngine Forums!
+  -- =======================================
+
+})
