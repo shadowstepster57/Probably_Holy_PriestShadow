@@ -42,13 +42,13 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         { "88685", "modifier.shift", "ground" },
         { "Lightwell", "modifier.control", "ground" },
         { "Prayer of Mending", "!buff.lowest", "lowest" },
-        --{ "Greater Heal", "lowest.health < 50", "lowest" },
+        { "Greater Heal", "lowest.health < 60", "lowest" },
         { "Binding Heal", {
         	"lowest.health < 40",
         	"player.health < 40"
         }},
-        { "Prayer of Healing", "@coreHealing.needsHealing(85, 10)", "lowest" },
-        { "Heal", "lowest.health < 90", "lowest" },
+        { "Prayer of Healing", "@coreHealing.needsHealing(85, 8)", "lowest" },
+        { "Heal", "lowest.health < 95", "lowest" },
 },"modifier.multitarget" },
        
         -- 10-man
