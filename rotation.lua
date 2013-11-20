@@ -32,13 +32,13 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         { "Hymn of Hope", "modifier.alt"},
         
         -- 25-man
-        {{ "Chakra: Sanctuary", "!player.buff" },
+        {{{ "Chakra: Sanctuary", "!player.buff" },
         { "Circle of Healing", "@coreHealing.needsHealing(85, 3)", "lowest" },
         { "Holy Word: Sanctuary", "modifier.shift", "ground" },
         { "88685", "modifier.shift", "ground" },
         { "Lightwell", "modifier.control", "ground" },
         { "Prayer of Mending", "!buff.tank", "tank" },
-        { "Greater Heal", "lowest.health < 50", "lowest" },
+        --{ "Greater Heal", "lowest.health < 50", "lowest" },
         { "Halo", "@coreHealing.needsHealing(60, 10)", "lowest" },
         { "Binding Heal", {
         	"lowest.health < 40",
@@ -50,10 +50,10 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         }, "lowest"},
         { "Prayer of Healing", "@coreHealing.needsHealing(85, 10)", "lowest" },
         { "Heal", "lowest.health < 90", "lowest" },
-}"modifier.multitarget" },
+},"modifier.multitarget" },
        
         -- 10-man
-        {{ "Chakra: Serenity", "!player.buff" },
+        {{{ "Chakra: Serenity", "!player.buff" },
         { "139", "!tank.buff(Renew}", "tank" },
         { "88684", "lowest.health < 90" },
         { "Binding Heal", {
@@ -61,16 +61,16 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	"player.health < 40"
         }, "lowest" },
         { "Flash Heal", "lowest.health < 40", "lowest" },
-        { "Greater Heal", "lowest.health < 55", "lowest" },
+        --{ "Greater Heal", "lowest.health < 55", "lowest" },
         { "Renew", {
         	"lowest.health < 80",
         	"!lowest.buff(Renew)"
         }, "lowest" },
         { "Heal", "lowest.health < 90", "lowest" }, 
-}"!modifier.multitarget" },
+}, "!modifier.multitarget" },
         
         
         
         
-
-})
+}
+)
