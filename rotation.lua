@@ -29,26 +29,26 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
 		"player.mana < 90",
 		"modifier.cooldowns"
         }},
-        { "Hymn of Hope", "modifier.shift" },
+        { "Hymn of Hope", "modifier.alt"},
         
         --healing
         { "Chakra: Sanctuary", "!player.buff" },
         { "Circle of Healing", "@coreHealing.needsHealing(85, 3)", "lowest" },
-        { "Holy Word: Sanctuary", "modifier.lalt", "ground" },
+        { "Holy Word: Sanctuary", "modifier.shift", "ground" },
+        { "88685", "modifier.shift", "ground" },
+        { "Lightwell", "modifier.control", "ground" },
         { "Prayer of Mending", "!buff.tank", "tank" },
-        { "Greater Heal", {
-        	"lowest.health < 40",
-        	"player.buff(serendipity).stacks = 2"
-        }},
-        { "Flash Heal", "lowest.health < 35", "lowest" },
+        { "Greater Heal", "lowest.health < 50", "lowest" },
+        { "Halo", "@coreHealing.needsHealing(60, 10)", "lowest" },
         { "Binding Heal", {
         	"lowest.health < 40",
         	"player.health < 40"
         }},
         { "Renew", {
         	"lowest.health < 70",
-        	"!lowest.buff(Renew"
+        	"!lowest.buff(Renew)"
         }},
+        { "Prayer of Healing", "@coreHealing.needsHealing(85, 10)", "lowest" },
         { "Heal", "lowest.health < 90", "lowest" },
         
         
