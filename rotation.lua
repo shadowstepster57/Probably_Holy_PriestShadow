@@ -46,7 +46,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         }},
         { "139", {
         	"lowest.health < 70",
-        	"!lowest.buff(Renew)"
+        	"!lowest.buff(139)"
         }, "lowest"},
         { "Prayer of Healing", "@coreHealing.needsHealing(85, 10)", "lowest" },
         { "Heal", "lowest.health < 90", "lowest" },
@@ -54,7 +54,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
        
         -- 10-man
         {{{ "Chakra: Serenity", "!player.buff" },
-        { "139", "!tank.buff(Renew}", "tank" },
+        { "139", "!tank.buff(139}", "tank" },
         { "88684", "lowest.health < 90" },
         { "Binding Heal", {
         	"lowest.health < 40",
@@ -64,7 +64,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         --{ "Greater Heal", "lowest.health < 55", "lowest" },
         { "Renew", {
         	"lowest.health < 80",
-        	"!lowest.buff(Renew)"
+        	"!lowest.buff(139)"
         }, "lowest" },
         { "Heal", "lowest.health < 90", "lowest" }, 
 }, "!modifier.multitarget" },
