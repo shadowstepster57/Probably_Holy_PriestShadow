@@ -60,11 +60,14 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         --Hymn of Hope
         { "64901", "modifier.lalt"},
         --Divine Hymn
-        { "64843", "modifier.rshift" },
+        { "64843", {
+        	"@coreHealing.needsHealing(50, 8)",
+        	"modifier.cooldowns"
+        }},
         --Lightwell
         { "724", "modifier.lcontrol", "ground" },
         --Power Infusion
-        { "10060", "modifier.rcontrol" },
+        { "10060", "modifier.rshift" },
         --Mass Dispell
         { "32375", "modifier.ralt", "ground" },
         
