@@ -23,7 +23,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
 		"modifier.cooldowns"
 	}},
 	{ "Mindbender", {
-		"player.mana < 70",
+		"player.mana < 80",
 		"modifier.cooldowns"
 	}},
 	{ "Arcane Torrent", {
@@ -37,7 +37,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         
         -- 25-man
         {{	{ "Chakra: Sanctuary", "!player.buff" },
-        	{ "Circle of Healing", "@coreHealing.needsHealing(95, 3)", "lowest" },
+        	{ "Circle of Healing", "@coreHealing.needsHealing(99, 3)", "lowest" },
         	{ "Holy Word: Sanctuary", "modifier.lshift", "ground" },
         	{ "88685", "modifier.shift", "ground" },
         	{ "Lightwell", "modifier.control", "ground" },
