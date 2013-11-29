@@ -52,22 +52,25 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
 		"player.mana < 90",
 		"modifier.cooldowns"
         }},
-        { "129250", "player.mana < 100", "target" },
         
         --Desperate Prayer
         { "19236", "player.health < 25", "player" },
         
         --Hymn of Hope
         { "64901", "modifier.lalt"},
+        
         --Divine Hymn
         { "64843", {
         	"@coreHealing.needsHealing(50, 8)",
         	"modifier.cooldowns"
         }},
+        
         --Lightwell
         { "724", "modifier.lcontrol", "ground" },
+        
         --Power Infusion
         { "10060", "modifier.rshift" },
+        
         --Mass Dispell
         { "32375", "modifier.ralt", "ground" },
         
@@ -77,7 +80,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         
         -- Sanctuary
         {{	{ "81206", "!player.buff" },
-        	{ "34861", "@coreHealing.needsHealing(99, 3)", "lowest" },
+        	{ "34861", "lowest.health < 95", "lowest" },
         	{ "2061", {
         		"player.buff(114255).stacks > 0",
         		"lowest.health < 80"
@@ -96,7 +99,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
        
         -- Serenity
         {{	{ "81208", "!player.buff" },
-        	{ "34861", "@coreHealing.needsHealing(90, 5)", "lowest" },
+        	{ "34861", "lowest.health < 95", "lowest" },
         	{ "2061", {
         		"player.buff(114255).stacks > 0",
         		"lowest.health < 80"
@@ -109,12 +112,12 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"player.health < 40"
         	}, "lowest" },
         	{ "2061", "lowest.health < 40", "lowest" },
-        	{ "2060", "lowest.health < 75", "lowest" },
-        	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
         	{ "139", {
         		"lowest.health < 90",
         		"!lowest.buff(139)"
         	}, "lowest" },
+        	{ "2060", "lowest.health < 75", "lowest" },
+        	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
         	{ "2050", "lowest.health < 95", "lowest" }, 
         }, "!modifier.multitarget" },
         
