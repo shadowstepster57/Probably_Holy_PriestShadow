@@ -93,7 +93,6 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	{ "596", "@coreHealing.needsHealing(75, 8)", "lowest" },
         	{ "33076", "!buff.tank", "tank" },
         	{ "2061", "lowest.health < 40", "lowest" },
-        	{ "2060", "lowest.health < 60", "lowest" },
         	{ "2050", "lowest.health < 95", "lowest" },
         }, "modifier.multitarget" },
        
