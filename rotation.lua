@@ -79,7 +79,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         { "120517", "@coreHealing.needsHealing(60, 10)", "lowest" },
         
         -- Sanctuary
-        {{	{ "81206", "!player.buff" },
+        {{	{ "81206", "!player.buff(81206)" },
         	{ "34861", "lowest.health < 95", "lowest" },
         	{ "2061", {
         		"player.buff(114255).stacks > 0",
@@ -94,10 +94,10 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	{ "33076", "!buff.tank", "tank" },
         	{ "2061", "lowest.health < 40", "lowest" },
         	{ "2050", "lowest.health < 95", "lowest" },
-        }, "modifier.multitarget" },
+        }, "toggle.sanctuary" },
        
         -- Serenity
-        {{	{ "81208", "!player.buff" },
+        {{	{ "81208", "!player.buff(81208)" },
         	{ "34861", "lowest.health < 95", "lowest" },
         	{ "2061", {
         		"player.buff(114255).stacks > 0",
@@ -118,7 +118,19 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	{ "2060", "lowest.health < 75", "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
         	{ "2050", "lowest.health < 95", "lowest" }, 
-        }, "!modifier.multitarget" },
+        }, "toggle.serenity" },
+        -- Chastise
+        {{	{ "Chakra: Chastise", "!player.buff(Chakra: Chastise)" },
+        	{ "Mindbender",	"player.mana < 95" },
+        	{ "Power Infusion", "modifier.cooldowns" },
+        	{ "Mind Sear", "modifier.multitarget" },
+        	{ "Holy Fire" },
+        	{ "Shadow Word: Pain", "!target.debuff" },
+        	{ "Shadow Word: Death", "target.health < 20" },
+        	{ "Smite" },
+        }, "toggle.chastise" },
+        	
+        	
         
   }, {
     { "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
@@ -127,4 +139,8 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         "!lowest.buff(139)"
     }, "lowest" },
     { "2050", "lowest.health < 95", "lowest" },
-})
+}, function ()
+  ProbablyEngine.toggle.create('sanctuary', 'Interface\\Icons\\ability_priest_prayerofhealing', 'Sanctuary', '')
+  ProbablyEngine.toggle.create('serenity', 'Interface\\Icons\\ability_priest_renew', 'Serenity', '')
+  ProbablyEngine.toggle.create('chastise', 'Interface\\Icons\\ability_priest_smite', 'Chastise', '')
+end)
