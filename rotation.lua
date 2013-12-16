@@ -19,6 +19,7 @@
 --120517 is Halo
 --114255 is the Surge of Light buff ID
 --129250 is Power Word: Solace
+--88684 is Power Word: Serenity
 --19236 is Desperate Prayer
 --10060 is Power Infusion
 --32375 is Mass Dispel
@@ -57,7 +58,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         { "19236", "player.health < 25", "player" },
         
         --Hymn of Hope
-        { "64901", "modifier.lalt"},
+        { "!64901", "modifier.lalt"},
         
         --Divine Hymn
         { "64843", {
@@ -75,7 +76,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         { "32375", "modifier.ralt", "ground" },
         
         --Cascade/Halo
-        { "121135", "@coreHealing.needsHealing(80, 6)", "lowest" },
+        { "!121135", "@coreHealing.needsHealing(80, 6)", "lowest" },
         { "120517", "@coreHealing.needsHealing(60, 10)", "lowest" },
         
         -- Sanctuary
@@ -90,9 +91,9 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"lowest.health < 40",
         		"player.health < 40"
         	}, "lowest" },
-        	{ "596", "@coreHealing.needsHealing(75, 8)", "lowest" },
+        	{ "596", "@coreHealing.needsHealing(80, 5)", "lowest" },
         	{ "33076", "!buff.tank", "tank" },
-        	{ "2061", "lowest.health < 40", "lowest" },
+        	{ "!2061", "lowest.health < 40", "lowest" },
         	{ "2050", "lowest.health < 95", "lowest" },
         }, "toggle.sanctuary" },
        
@@ -104,18 +105,18 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"lowest.health < 80"
         	}, "lowest" },
         	{ "2061", "tank.health < 35", "tank" },
+        	{ "139", {
+        		"lowest.health < 90",
+        		"!lowest.buff(139)"
         	{ "88684", "lowest.health < 90" },
         	{ "139", "!tank.buff(139)", "tank" },
         	{ "32546", {
         		"lowest.health < 40",
         		"player.health < 40"
         	}, "lowest" },
-        	{ "2061", "lowest.health < 40", "lowest" },
-        	{ "139", {
-        		"lowest.health < 90",
-        		"!lowest.buff(139)"
+        	{ "!2061", "lowest.health < 40", "lowest" },
         	}, "lowest" },
-        	{ "2060", "lowest.health < 75", "lowest" },
+        	{ "!2060", "lowest.health < 75", "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
         	{ "2050", "lowest.health < 95", "lowest" }, 
         }, "toggle.serenity" },
