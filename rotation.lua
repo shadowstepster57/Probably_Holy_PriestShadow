@@ -82,6 +82,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         -- Sanctuary
         {{	{ "81206", "!player.buff(81206)" },
         	{ "34861", "lowest.health < 95", "lowest" },
+        	{ "2061", "lowest.health < 30", "lowest" },
         	{ "2061", {
         		"player.buff(114255).stacks > 0",
         		"lowest.health < 80"
@@ -93,8 +94,6 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	}, "lowest" },
         	{ "596", "@coreHealing.needsHealing(80, 5)", "lowest" },
         	{ "33076", "!buff.tank", "tank" },
-        	{ "!2061", "lowest.health < 40", "lowest" },
-        	{ "2050", "lowest.health < 95", "lowest" },
         }, "toggle.sanctuary" },
        
         -- Serenity
@@ -115,10 +114,9 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"lowest.health < 40",
         		"player.health < 40"
         	}, "lowest" },
-        	{ "!2061", "lowest.health < 40", "lowest" },
+        	{ "2061", "lowest.health < 40", "lowest" },
         	{ "!2060", "lowest.health < 75", "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
-        	{ "2050", "lowest.health < 95", "lowest" }, 
         }, "toggle.serenity" },
         -- Chastise
         {{	{ "Chakra: Chastise", "!player.buff(Chakra: Chastise)" },
