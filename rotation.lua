@@ -108,6 +108,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	{ "139", {
         		"lowest.health < 90",
         		"!lowest.buff(139)"
+        	}, "lowest" },
         	{ "88684", "lowest.health < 90" },
         	{ "139", "!tank.buff(139)", "tank" },
         	{ "32546", {
@@ -115,7 +116,6 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"player.health < 40"
         	}, "lowest" },
         	{ "!2061", "lowest.health < 40", "lowest" },
-        	}, "lowest" },
         	{ "!2060", "lowest.health < 75", "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
         	{ "2050", "lowest.health < 95", "lowest" }, 
