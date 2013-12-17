@@ -54,11 +54,19 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
 		"modifier.cooldowns"
         }},
         
+        --Dispells for SoO
+        { "527", {
+   	  "player.buff(Gift of the Titans)",
+	  "@coreHealing.needsDispelled('Mark of Arrogance')" 
+	}, nil },
+	{ "527", "@coreHealing.needsDispelled('Shadow Word: Bane')", nil },
+	{ "527", "@coreHealing.needsDispelled('Corrosive Blood')", nil },
+        
         --Desperate Prayer
         { "19236", "player.health < 25", "player" },
         
         --Hymn of Hope
-        { "!64901", "modifier.lalt"},
+        { "64901", "@coreHealing.needsHealing(25, 8)"},
         
         --Divine Hymn
         { "64843", {
@@ -95,6 +103,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	{ "596", "@coreHealing.needsHealing(85, 5)", "lowest" },
         	{ "33076", "!target.role(tank).tank" },
         	{ "129", "!target.role(tank).buff(129)" },
+        	{ "129", "!target.role(tank).buff(129)", "target.role(tank)"},
         }, "toggle.sanctuary" },
        
         -- Serenity
@@ -118,7 +127,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"!lowest.buff(139)"
         	}, "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
-        	{ "129", "!target.role(tank).buff(129)"},
+        	{ "129", "!target.role(tank).buff(129)", "target.role(tank)"},
         }, "toggle.serenity" },
         -- Chastise
         {{	{ "Chakra: Chastise", "!player.buff(Chakra: Chastise)" },
@@ -135,6 +144,8 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         
   }, {
     { "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
+    { "129", "!target.role(tank).buff(129)" },
+    { "129", "!target.role(tank).buff(129)", "target.role(tank)"},
     { "139", {
         "lowest.health < 80",
         "!lowest.buff(139)"
