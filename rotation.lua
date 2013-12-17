@@ -70,7 +70,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         { "724", "modifier.lcontrol", "ground" },
         
         --Power Infusion
-        { "10060", "modifier.rshift" },
+        --{ "10060", "modifier.rshift" },
         
         --Mass Dispell
         { "32375", "modifier.ralt", "ground" },
@@ -81,19 +81,20 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         
         -- Sanctuary
         {{	{ "81206", "!player.buff(81206)" },
+        	{ "88625", "modifier.shift", "ground" },
         	{ "34861", "lowest.health < 95", "lowest" },
         	{ "2061", "lowest.health < 30", "lowest" },
         	{ "2061", {
         		"player.buff(114255).stacks > 0",
         		"lowest.health < 80"
         	}, "lowest" },
-        	{ "88685", "modifier.lshift", "ground" },
         	{ "32546", {
         		"lowest.health < 40",
         		"player.health < 40"
         	}, "lowest" },
-        	{ "596", "@coreHealing.needsHealing(80, 5)", "lowest" },
-        	{ "33076", "!buff.tank", "tank" },
+        	{ "596", "@coreHealing.needsHealing(85, 5)", "lowest" },
+        	{ "33076", "!target.role(tank).tank" },
+        	{ "129", "!target.role(tank).buff(129)" },
         }, "toggle.sanctuary" },
        
         -- Serenity
@@ -104,19 +105,20 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"lowest.health < 80"
         	}, "lowest" },
         	{ "2061", "tank.health < 35", "tank" },
-        	{ "139", {
-        		"lowest.health < 90",
-        		"!lowest.buff(139)"
-        	}, "lowest" },
         	{ "88684", "lowest.health < 90" },
-        	{ "139", "!tank.buff(139)", "tank" },
+        	{ "139", "!target.role(tank).buff(139)"},
         	{ "32546", {
         		"lowest.health < 40",
         		"player.health < 40"
         	}, "lowest" },
         	{ "2061", "lowest.health < 40", "lowest" },
-        	{ "!2060", "lowest.health < 75", "lowest" },
+        	{ "2060", "lowest.health < 75", "lowest" },
+        	{ "139", {
+        		"lowest.health < 90",
+        		"!lowest.buff(139)"
+        	}, "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
+        	{ "129", "!target.role(tank).buff(129)"},
         }, "toggle.serenity" },
         -- Chastise
         {{	{ "Chakra: Chastise", "!player.buff(Chakra: Chastise)" },
