@@ -23,6 +23,8 @@
 --19236 is Desperate Prayer
 --10060 is Power Infusion
 --32375 is Mass Dispel
+--63733 is Serendipity buff ID
+
 ProbablyEngine.library.register('coreHealing', {
   needsHealing = function(percent, count)
     return ProbablyEngine.raid.needsHealing(tonumber(percent)) >= count
@@ -135,7 +137,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         
   }, {
     { "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
-    { "139", "!tank.buff(129)", "tank" },
+    { "139", "!tank.buff(139)", "tank" },
     { "139", {
         "lowest.health < 80",
         "!lowest.buff(139)"
