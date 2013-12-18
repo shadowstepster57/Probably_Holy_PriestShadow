@@ -66,12 +66,9 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         --Desperate Prayer
         { "19236", "player.health < 25", "player" },
         
-        --Hymn of Hope
-        { "64901", "@coreHealing.needsHealing(25, 8)"},
-        
         --Divine Hymn
         { "64843", {
-        	"@coreHealing.needsHealing(50, 8)",
+        	"@coreHealing.needsHealing(35, 8)",
         	"modifier.cooldowns"
         }},
         
@@ -145,7 +142,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
     }, "lowest" },
     { "2050", "lowest.health < 95", "lowest" },
 }, function ()
-  ProbablyEngine.toggle.create('sanctuary', 'Interface\\Icons\\ability_priest_prayerofhealing', 'Sanctuary', '')
-  ProbablyEngine.toggle.create('serenity', 'Interface\\Icons\\ability_priest_renew', 'Serenity', '')
-  ProbablyEngine.toggle.create('chastise', 'Interface\\Icons\\ability_priest_smite', 'Chastise', '')
+  ProbablyEngine.toggle.create('sanctuary', 'Interface\\Icons\\spell_holy_prayerofhealing02', 'Sanctuary', '')
+  ProbablyEngine.toggle.create('serenity', 'Interface\\Icons\\spell_holy_greaterheal', 'Serenity', '')
+  ProbablyEngine.toggle.create('chastise', 'Interface\\Icons\\spell_priest_psyfiend', 'Chastise', '')
 end)
