@@ -61,6 +61,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
 	}, nil },
 	{ "527", "@coreHealing.needsDispelled('Shadow Word: Bane')", nil },
 	{ "527", "@coreHealing.needsDispelled('Corrosive Blood')", nil },
+	{ "527", "modifier.alt", "mouseover" },
         
         --Desperate Prayer
         { "19236", "player.health < 25", "player" },
@@ -75,17 +76,12 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         }},
         
         --Lightwell
-        { "724", "modifier.lcontrol", "ground" },
+        { "724", "modifier.control", "ground" },
         
-        --Power Infusion
-        --{ "10060", "modifier.rshift" },
-        
-        --Mass Dispell
-        { "32375", "modifier.ralt", "ground" },
         
         --Cascade/Halo
         { "!121135", "@coreHealing.needsHealing(80, 6)", "lowest" },
-        { "120517", "@coreHealing.needsHealing(60, 10)", "lowest" },
+        { "!120517", "@coreHealing.needsHealing(60, 10)", "lowest" },
         
         -- Sanctuary
         {{	{ "81206", "!player.buff(81206)" },
