@@ -86,7 +86,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         -- Sanctuary
         {{	{ "81206", "!player.buff(81206)" },
         	{ "88625", "modifier.shift", "ground" },
-        	{ "34861", "lowest.health < 95", "lowest" },
+        	{ "34861", "@coreHealing.needsHealing(90, 5)", "lowest" },
         	{ "2061", "lowest.health < 30", "lowest" },
         	{ "2061", {
         		"player.buff(114255).stacks > 0",
@@ -97,9 +97,8 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"player.health < 40"
         	}, "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 5)", "lowest" },
-        	{ "33076", "!target.role(tank).tank" },
-        	{ "129", "!target.role(tank).buff(129)" },
-        	{ "129", "!target.role(tank).buff(129)", "target.role(tank)"},
+        	{ "33076", "!tank.buff(33076)", "tank" },
+        	{ "139", "!tank.buff(139)", "tank" },
         }, "toggle.sanctuary" },
        
         -- Serenity
@@ -111,7 +110,6 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	}, "lowest" },
         	{ "2061", "tank.health < 35", "tank" },
         	{ "88684", "lowest.health < 90" },
-        	{ "139", "!target.role(tank).buff(139)"},
         	{ "32546", {
         		"lowest.health < 40",
         		"player.health < 40"
@@ -123,7 +121,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         		"!lowest.buff(139)"
         	}, "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
-        	{ "129", "!target.role(tank).buff(129)", "target.role(tank)"},
+        	{ "139", "!tank.buff(139)", "tank"},
         }, "toggle.serenity" },
         -- Chastise
         {{	{ "Chakra: Chastise", "!player.buff(Chakra: Chastise)" },
@@ -140,8 +138,7 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         
   }, {
     { "596", "@coreHealing.needsHealing(85, 8)", "lowest" },
-    { "129", "!target.role(tank).buff(129)" },
-    { "129", "!target.role(tank).buff(129)", "target.role(tank)"},
+    { "139", "!tank.buff(129)", "tank" },
     { "139", {
         "lowest.health < 80",
         "!lowest.buff(139)"
