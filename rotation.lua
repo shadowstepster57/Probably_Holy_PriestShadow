@@ -25,6 +25,11 @@
 --32375 is Mass Dispel
 --63733 is Serendipity buff ID
 
+--Thanks to CML for anti-binding heal self stuff
+ProbablyEngine.condition.register("isme", function(target, spell)
+  return (UnitGUID(target) == UnitGUID("player"))
+end)
+
 ProbablyEngine.library.register('coreHealing', {
   needsHealing = function(percent, count)
     return ProbablyEngine.raid.needsHealing(tonumber(percent)) >= count
@@ -88,12 +93,13 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         	{ "34861", "@coreHealing.needsHealing(90, 5)", "lowest" },
         	{ "2061", "lowest.health < 30", "lowest" },
         	{ "2061", {
-        		"player.buff(114255).stacks > 0",
+        		"player.buff(114255)",
         		"lowest.health < 80"
         	}, "lowest" },
         	{ "32546", {
         		"lowest.health < 40",
-        		"player.health < 40"
+        		"player.health < 40",
+        		"!lowest.isme"
         	}, "lowest" },
         	{ "596", "@coreHealing.needsHealing(85, 5)", "lowest" },
         	{ "33076", "!tank.buff(33076)", "tank" },
@@ -104,14 +110,15 @@ ProbablyEngine.rotation.register_custom(257, "Holy Priest[Shadow]", {
         {{	{ "81208", "!player.buff(81208)" },
         	{ "34861", "lowest.health < 95", "lowest" },
         	{ "2061", {
-        		"player.buff(114255).stacks > 0",
+        		"player.buff(114255)",
         		"lowest.health < 80"
         	}, "lowest" },
         	{ "2061", "tank.health < 35", "tank" },
         	{ "88684", "lowest.health < 90" },
         	{ "32546", {
         		"lowest.health < 40",
-        		"player.health < 40"
+        		"player.health < 40",
+        		"!lowest.isme"
         	}, "lowest" },
         	{ "2061", "lowest.health < 40", "lowest" },
         	{ "2060", "lowest.health < 75", "lowest" },
